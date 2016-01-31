@@ -1,0 +1,304 @@
+@charset "UTF-8";
+.wrapper {
+  margin: 0 auto; }
+
+.container {
+  width: auto;
+  margin: 0 auto; }
+
+.container::before,
+.container::after,
+.clearfix::before,
+.clearfix::after {
+  content: ''; }
+
+.container::after,
+.clearfix::after {
+  clear: both; }
+
+h1 {
+  margin: 0 auto;
+  text-align: center; }
+
+h2 {
+  clear: both;
+  text-align: center; }
+
+header {
+  background: ghostwhite; }
+
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ul,
+ol {
+  list-style-type: none; }
+
+.main-nav {
+  position: relative; }
+  .main-nav ul {
+    display: none;
+    position: relative;
+    top: 100%;
+    right: 0;
+    width: 100%; }
+    .main-nav ul li {
+      background: gray;
+      border: 2px solid;
+      width: 100%; }
+      .main-nav ul li a {
+        color: aliceblue;
+        display: block;
+        white-space: nowrap;
+        padding: 10px 0px;
+        text-decoration: none;
+        text-align: center; }
+
+.nav-btn {
+  margin: 10px;
+  display: block;
+  height: 50px;
+  border-bottom: 4px solid;
+  border-top: 4px solid;
+  position: relative; }
+
+.nav-btn::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: black;
+  position: relative;
+  top: 50%;
+  margin-top: -2px; }
+
+.nav-btn:hover + ul {
+  display: block;
+  position: relative; }
+
+.free-space {
+  width: 100%; }
+
+.accordion ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left; }
+
+.accordion body > ul {
+  margin-bottom: 300px;
+  border: 1px solid #222; }
+
+.accordion ul > li {
+  position: relative; }
+
+.accordion ul > li > a {
+  display: block;
+  outline: 0;
+  padding: .7em 1em;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  background: #333;
+  border-bottom: 1px solid #222; }
+
+.accordion ul > li > ul {
+  counter-reset: items;
+  height: 0;
+  overflow: hidden;
+  background: #eee;
+  color: #777;
+  font-size: .75em; }
+
+.accordion ul > li > ul > li {
+  counter-increment: items;
+  padding: .5em 1.3em;
+  border-bottom: 1px dotted #DDD; }
+
+.accordion ul > li > ul:after {
+  content: counter(items);
+  font-size: 0.857em;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  background: #333;
+  line-height: 1em;
+  height: 1em;
+  padding: .7em .8em;
+  margin: -.8em 0 0 0;
+  color: white;
+  text-indent: 0;
+  text-align: center;
+  font-weight: 500; }
+
+#modal_form {
+  width: 300px;
+  height: 300px;
+  /* Рaзмеры дoлжны быть фиксирoвaны */
+  border-radius: 5px;
+  border: 3px #000 solid;
+  background: #fff;
+  position: fixed;
+  /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+  top: 45%;
+  /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+  left: 50%;
+  /* пoлoвинa экрaнa слевa */
+  margin-top: -150px;
+  margin-left: -150px;
+  /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+  display: none;
+  /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+  opacity: 0;
+  /* пoлнoстью прoзрaчнo для aнимирoвaния */
+  z-index: 5;
+  /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+  padding: 20px 10px; }
+  #modal_form input {
+    width: 100%; }
+  #modal_form button {
+    width: 40%;
+    margin: 5%; }
+  #modal_form form p {
+    padding-bottom: 10px;
+    text-align: center; }
+
+/* Кнoпкa зaкрыть для тех ктo в тaнке) */
+#modal_form #modal_close {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: block; }
+
+/* Пoдлoжкa */
+#overlay {
+  z-index: 3;
+  /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+  position: fixed;
+  /* всегдa перекрывaет весь сaйт */
+  background-color: #000;
+  /* чернaя */
+  opacity: 0.8;
+  /* нo немнoгo прoзрaчнa */
+  -moz-opacity: 0.8;
+  /* фикс прозрачности для старых браузеров */
+  filter: alpha(opacity=80);
+  width: 100%;
+  height: 100%;
+  /* рaзмерoм вo весь экрaн */
+  top: 0;
+  /* сверху и слевa 0, oбязaтельные свoйствa! */
+  left: 0;
+  cursor: pointer;
+  display: none;
+  /* в oбычнoм сoстoянии её нет) */ }
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px; } }
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px; } }
+
+@media screen and (min-width: 720px) {
+  .container {
+    max-width: 720px; }
+  .nav-btn {
+    display: none; }
+  .main-nav ul {
+    display: block;
+    position: static;
+    margin: 0 auto; }
+    .main-nav ul li {
+      float: left;
+      width: 100px; } }
+
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 1000px; }
+  .nav-btn {
+    display: none; }
+  .main-nav ul {
+    display: block;
+    position: static; }
+    .main-nav ul li {
+      float: left;
+      width: 140px; } }
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1400px; }
+  .main-nav ul {
+    display: block;
+    position: static; }
+    .main-nav ul li {
+      float: left;
+      width: 200px; } }
+
+.tabs-menu {
+  height: 30px;
+  float: left;
+  clear: both; }
+  .tabs-menu li {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1; }
+    .tabs-menu li a {
+      padding: 10px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none; }
+  .tabs-menu li.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5; }
+    .tabs-menu li.current a {
+      color: #2e7da3; }
+
+.tab {
+  border: 1px solid #d4d4d1;
+  background-color: #fff;
+  float: left;
+  margin-bottom: 20px;
+  width: auto; }
+
+.tab-content {
+  width: 100%;
+  padding: 20px;
+  display: none; }
+
+#tab-1 {
+  display: block; }
+
+.tooltip-box p {
+  display: block;
+  width: 100%;
+  margin: 1em auto; }
+
+.tooltip-text {
+  position: absolute;
+  z-index: 999;
+  left: -9999px;
+  background-color: #dedede;
+  padding: 5px;
+  border: 1px solid #fff;
+  width: 250px; }
+  .tooltip-text p {
+    color: #fff;
+    background-color: #222;
+    padding: 2px 7px; }

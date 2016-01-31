@@ -1,0 +1,31 @@
+
+.wrapper {
+  margin: 0 auto;
+}
+.container {
+  width: auto;
+  margin: 0 auto;
+}
+.container::before,
+.container::after,
+.clearfix::before,
+.clearfix::after{
+  content: '';
+}
+.container::after,
+.clearfix::after{
+  clear: both;
+}
+
+
+h1{
+  margin: 0 auto;
+  text-align: center;
+}
+h2{
+  clear: both;
+  text-align: center;
+}
+
+
+

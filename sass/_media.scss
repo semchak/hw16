@@ -1,0 +1,59 @@
+@media screen and (min-width: 320px) {
+  .container{
+    max-width: 320px;
+  }
+}
+@media screen and (min-width: 480px){
+  .container{
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 720px){
+  .container{
+    max-width: 720px;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .main-nav ul {
+    display: block;
+    position: static;
+    margin: 0 auto;
+    li {
+      float: left;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container{
+    max-width: 1000px;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .main-nav ul {
+    display: block;
+    position: static;
+    li {
+      float: left;
+      width: 140px;
+    }
+  }
+}
+
+@media screen and (min-width: 1400px){
+  .container{
+    max-width: 1400px;
+  }
+  .main-nav ul {
+    display: block;
+    position: static;
+    li {
+      float: left;
+      width: 200px;
+    }
+  }
+}
